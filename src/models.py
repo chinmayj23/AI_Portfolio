@@ -18,7 +18,7 @@ def lstm_model(x_train, x_validation, y_train, y_validation, lag, filepath='chec
     lstm.add(LSTM(64, activation='relu'))
     lstm.add(Dense(1))
     lstm.compile(optimizer='adam', loss='mse', metrics=['accuracy'])
-    res = lstm.fit(x_train, y_train, epochs=1, batch_size=8, validation_data=(x_validation, y_validation),
+    res = lstm.fit(x_train, y_train, epochs=50, batch_size=8, validation_data=(x_validation, y_validation),
                    callbacks=callbacks)
 
     return res, lstm
