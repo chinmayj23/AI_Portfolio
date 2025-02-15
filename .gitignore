@@ -1,0 +1,12 @@
+# Compiled Python files
+*.pyc
+__pycache__/
+
+# Virtual environment
+venv/
+
+# Model files
+*.h5
+*.keras
+model.json
+
