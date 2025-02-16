@@ -5,7 +5,7 @@ import os
 def lstm_model(x_train, x_validation, y_train, y_validation, lag, filepath='checkpoints/'):
     """Defines and trains the LSTM model."""
     checkpoint_filepath = os.path.join(filepath, 'lstm_model.keras')
-    earlystopping = EarlyStopping(monitor='val_loss', min_delta=0, patience=1, verbose=1, restore_best_weights=True)
+    earlystopping = EarlyStopping(monitor='val_loss', min_delta=0, patience=5, verbose=1, restore_best_weights=True)
     checkpoint = ModelCheckpoint(checkpoint_filepath, monitor='val_loss', mode='min', save_best_only=True, verbose=1)
     callbacks = [earlystopping, checkpoint]
     lstm = Sequential()
